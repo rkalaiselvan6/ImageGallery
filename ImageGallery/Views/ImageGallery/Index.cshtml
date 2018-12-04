@@ -1,0 +1,24 @@
+﻿@model ImageGallery.Models.ImageGalleryIndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Gallery</h2>
+<div class="body-content">
+    <div class="gallery-content">
+        @foreach(var img in Model.Pictures)
+        {
+        <div class="gallery-image" style="background-image:url(@img.ImageUrl)">
+
+        </div>
+        <span>@img.Title</span>
+        <ul>
+            @foreach(var tags in img.MetaDataTags)
+            {
+                <li>@tags.Description</li>
+            }
+        </ul>
+        }
+    </div>
+</div>
+
